@@ -19,3 +19,4 @@ Flask-WTF==0.15.1
 requests==2.25.1
 requests-file==1.5.1
 requests-html==0.10.0
+gunicorn
