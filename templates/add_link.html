@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% block content %}
+	<div class="container form">
+		<div class="row justify-content-center">
+			<form method="POST" action="">
+
+				    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          {% for category, message in messages %}        
+            <div class="alert {{ category }} col-md-5 container-fluid">
+              {{ message }}
+            </div>     
+          {% endfor %}
+        {% endif %} 
+      {% endwith %}
+      			<div><span>{{ short_url }} </span></div>
+				{{ form.hidden_tag() }}
+				 <fieldset  class="form-group">
+
+				    		   	<div style="" class="form-group">			                			 
+					                    
+					                    {{ form.url(class="form")}}
+					                			                
+					            </div>
+
+				    {{ form.submit(class="btn into") }}
+				    
+				</fieldset>
+
+
+
+            </div>
+			</form>
+			<a  href="{{ url_for('views')}}"><button class='btn' >DashBoard Views Links</button></a>
+		</div>
+
+	</div>
+{% endblock content %}
